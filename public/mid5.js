@@ -1,12 +1,15 @@
 let min = 1
 let max = 100
 let arr = [] 
-let result = 0 
+let result = 0
 for (let i = 0 ; i < 100; ++i){
     let n = Math.floor(Math.random() * (max - min + 1) + min)
     arr[i] = n 
 }
 
-arr = arr.map({
-    
+arr = arr.map((value) => { 
+    if(value%2==0) 
+        result+=value
 })
+
+console.log(result)

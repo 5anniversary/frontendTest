@@ -44,12 +44,17 @@
         el: '#app', 
         data: { 
             num : [],
-            message : ""
+            message : ''
         }, 
         methods: { 
             add() { 
-                console.log(this.num.length)
-                this.num[this.num.length] = message; 
+                this.num = []
+                for(let i =0; i<this.message; i++){
+                    let min = 0
+                    let max = 9
+                    let n = Math.floor(Math.random() * (max - min + 1) + min)
+                    this.num[i] = n;
+                } 
                 this.$forceUpdate();
             } 
         } 
