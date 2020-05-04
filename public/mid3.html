@@ -7,24 +7,25 @@
         div#app {
             padding: 30px;
             margin: 30px auto;
-            max-width: 600px;
+            max-width: 300px;
             border: 1px solid #ccc;
             box-shadow: 3px 3px 3px #aaa;
         }
 
         span {
             display: inline-block;
-            margin: 20px;
-            padding: 20px 40px;
+            margin: 5px;
+            padding: 8px 15px;
             border: 1px solid black;
+            cursor: pointer;
+        }
+
+        div#app>div {
+            margin-top: 20px;
         }
 
         button {
             padding: 0.5em 2em;
-        }
-
-        .yellow {
-            background-color: #ffa;
         }
     </style>
 </head>
@@ -32,23 +33,24 @@
 <body>
     <div id="app"> 
         <div>
-            <button type="button" v-on:click="show">보이기</button>
-            <button type="button" v-on:click="hide">감추기</button>
+            <input v-model="message" placeholder="">
+            <button type="button" v-on:click="add">생성</button>
         </div>
-        <span v-bind:class="{ yellow: true }" v-show="isShow">
+
+        <span v-for="(value, index) in num"> {{ value }} </span>
     </div>
     <script type="text/javascript"> 
     var app = new Vue({ 
         el: '#app', 
         data: { 
-            isShow: true 
+            num : [],
+            message : ""
         }, 
-        methods: {
-            show() { 
-                this.isShow = true;
-            },
-            hide() {
-                this.isShow = false;
+        methods: { 
+            add() { 
+                console.log(this.num.length)
+                this.num[this.num.length] = message; 
+                this.$forceUpdate();
             } 
         } 
     }) 
