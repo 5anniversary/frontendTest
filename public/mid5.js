@@ -7,6 +7,6 @@ for (let i = 0 ; i < 100; ++i){
     arr[i] = n 
 }
 
-for (let i=0; i<100; i++){
+arr = arr.map({
     
-}
+})
