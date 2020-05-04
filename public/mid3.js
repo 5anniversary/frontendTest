@@ -1,15 +1,14 @@
-// (1) 비어있는 persons1 배열을 생성한다.
-// (2) for 문에서 객체를 생성하여 persons1 배열의 원소에 대입하시오.
-//   for 문의 실행 결과 배열의 값은 다음과 같아야 한다.
-//   [{ name: "홍길동", age: 16 }, { name: "홍길동", age: 17 }, { name: "홍길동", age: 18 }]
-// (3) persons1 배열을 얕은 복사하여 persons2 배열을 생성한다.
-// (4) persons1[0].age = 20; 을 실행한다.
-// (5) persons1 배열을 출력한다.
-// (6) persons2 배열을 출력한다.
+let persons1 = []
+let persons2 = []
 
-let  persons1 = []
-
-for (var i = 0 ; i < 10 ; i++){
+for (var i = 0 ; i < 3 ; i++){
     let person = {name : "홍길동", age: 16+i }
-    persons.push(person)
+    persons1.push(person)
 }
+
+persons2 = persons1
+
+persons1[0].age = 20
+
+console.log(persons1)
+console.log(persons2)
