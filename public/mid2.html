@@ -32,8 +32,8 @@
 <body>
     <div id="app"> 
         <div>
-            <button type="button" v-on:click="show">보이기</button>
-            <button type="button" v-on:click="hide">감추기</button>
+            <button type="button" :disabled="isShow" v-on:click="show">보이기</button>
+            <button type="button" :disabled="!isShow" v-on:click="hide">감추기</button>
         </div>
         <span v-bind:class="{ yellow: true }" v-show="isShow">
     </div>
